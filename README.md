@@ -5,6 +5,7 @@ CineBoard is a movie dashboard application that provides a comprehensive view of
 ## Features
 
 - **Popular Movies:** Discover the most popular movies currently trending.
+- **Movie Details:** Get detailed information about any movie, including cast, crew, and reviews.
 - **Search Movies:** Find movies by title or genre with ease.
 - **Top Rated:** Explore the highest-rated movies of all time.
 - **Responsive Design:** Enjoy a seamless experience on both desktop and mobile devices.
