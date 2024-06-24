@@ -1,8 +1,18 @@
-import React from "react";
-
+import React, { useState } from "react";
 import { img_300, unavailable } from "../utils/config";
+import { PopUp } from "./index";
 
 const List = ({ content }) => {
+  const [selectedItem, setSelectedItem] = useState(null);
+
+  const handleItemClick = (item) => {
+    setSelectedItem(item);
+  };
+
+  const closePopup = () => {
+    setSelectedItem(null);
+  };
+
   return (
     <>
       {content?.map((item) => {
@@ -16,7 +26,12 @@ const List = ({ content }) => {
           id,
         } = item;
         return (
-          <div key={id} className="col-md-3 col-sm-4 py-3" id="card">
+          <div
+            key={id}
+            className="col-md-3 col-sm-4 py-3"
+            id="card"
+            onClick={() => handleItemClick(item)}
+          >
             <div className="card bg-dark">
               <img
                 src={poster_path ? `${img_300}/${poster_path}` : unavailable}
@@ -34,6 +49,7 @@ const List = ({ content }) => {
           </div>
         );
       })}
+      {selectedItem && <PopUp item={selectedItem} closePopup={closePopup} />}
     </>
   );
 };

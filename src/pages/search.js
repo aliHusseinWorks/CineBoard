@@ -53,7 +53,7 @@ const Search = () => {
           </button>
         </div>
         <List content={content} />
-        {page > 1 && <Pagination page={page} setPage={setPage} />}
+        {content?.length !== 0 && <Pagination page={page} setPage={setPage} />}
       </div>
     </div>
   );
